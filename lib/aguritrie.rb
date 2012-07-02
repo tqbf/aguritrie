@@ -9,7 +9,7 @@ module Aguri
 
     def add(ip, count=1, opts={})
       if ip.kind_of? String
-        ip = ip.split(".").map(&:to_i).reduce(0) {|acc, i| acc << 8; acc |= i}
+        ip = ip.split(".").map(&:to_i).reduce(0) {|acc, i| acc <<= 8; acc |= i}
       end
 
       if opts[:prefix]
