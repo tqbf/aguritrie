@@ -22,7 +22,7 @@ module Aguri
     def each 
       super do |ip, prefix, ticks, depth|
         ip = ip.unpack("N").first
-        yield "#{ (ip>>24&0xff) }.#{ (ip>>16)&0xff }.#{ (ip>>8)&0xff }.#{ ip&0xff }",
+        yield "#{ (ip&0xff) }.#{ (ip>>8)&0xff }.#{ (ip>>16)&0xff }.#{ (ip>>24)&0xff }",
    	      prefix, ticks, depth
       end
     end
